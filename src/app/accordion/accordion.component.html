@@ -1,0 +1,17 @@
+<!-- accordion component -->
+<div id="" class="columns is-multiline" *ngFor="let grade of grades">
+    <div class="column is-12">
+        <div class="panel panels-container grade">
+            <p class="panel-heading">
+                Grade: {{grade}}
+            </p>
+            <div class="panel-block panels-data-cell">
+                <app-child-accordion *ngIf="counselor" [students]="filterStudents(studentsByCounselor[grade][counselor])">
+                </app-child-accordion>
+                <app-child-accordion *ngIf="!counselor" [students]="filterStudents(studentsByGrade[grade])">
+                </app-child-accordion>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+/* Add application styles & imports to this file! */
+.panels-container {
+    padding: 15px;
+    width: 100%;
+    height: 400px;
+    overflow: scroll;
+}
+
+.accordions-container {
+    width: 100%;
+    .accordion-body-container {
+        overflow: auto;
+    }
+}

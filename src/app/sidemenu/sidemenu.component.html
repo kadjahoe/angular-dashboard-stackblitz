@@ -1,0 +1,18 @@
+<nav class="menu">
+    <p class="menu-label">
+        General
+    </p>
+    <ul class="menu-list">
+        <li><a (click)="selectCounselor(null)" class="is-active">Principal</a></li>
+    </ul>
+    <p class="menu-label">
+        Guidance Counselors
+    </p>
+    <ul class="menu-list">
+        <li>
+            <ul class="menu-list">
+                <li *ngFor="let counselor of counselors"><a (click)="selectCounselor(counselor)">{{counselor}}</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>

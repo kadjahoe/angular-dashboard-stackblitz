@@ -1,0 +1,33 @@
+<!-- main component -->
+<div class="section">
+    <div class="columns">
+        <aside class="column is-2">
+            <app-sidemenu (counselorSelected)="setCounselor($event)"></app-sidemenu>
+        </aside>
+        <main class="column">
+            <div class="level">
+                <div class="level-item">
+                    <div class="title">Dashboard</div>
+                </div>
+                <div class="level-right">
+                    <div class="box">
+                        <div class="field">
+                            <div class="control">
+                                <label class="label has-text-centered"> Attendance Threshold</label>
+                                <form #rangeForm="ngForm">
+                                    <div class="level-item">
+                                        <input id="sliderWithValue" class="slider has-output is-fullwidth" min="0" max="100" value="50" step="1" type="range" [ngModel]="range|async" (ngModelChange)="setStudentAttenRange($event)" #name="ngModel" name="range">
+                                        <output for="sliderWithValue">{{range | async}}</output>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <p class="help is-success has-text-centered">If threshold slider is used, please wait for data to load.</p>
+                    </div>
+                </div>
+            </div>
+            <app-statistics></app-statistics>
+            <app-accordion [counselor]="counselor" [range]="range"></app-accordion>
+        </main>
+    </div>
+</div>

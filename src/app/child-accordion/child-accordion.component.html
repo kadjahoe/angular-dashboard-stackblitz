@@ -1,0 +1,12 @@
+<ng-container *ngFor="let student of students">
+    <article class="box">
+        <div *ngIf="students" class="title toggle">
+            <p> {{student.firstName}} {{student.lastName}}</p>
+        </div>
+        <div *ngFor="let stud of getKeys(student)" class="">
+            <div class="content">
+                {{stud}} : {{student[stud]}}
+            </div>
+        </div>
+    </article>
+</ng-container>
